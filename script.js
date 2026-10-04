@@ -1,6 +1,6 @@
 /**
- * APEXAPP — JAVASCRIPT CONTROLLER
- * Smooth interactions, download triggers, accordion, tabs, and step guide enhancements.
+ * CAMPUS BUS DHSGSU — JAVASCRIPT CONTROLLER
+ * Lightweight, Mobile-First, Accessible
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,186 +9,177 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
       const icon = mobileToggle.querySelector('i');
-      if (navLinks.classList.contains('open')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
-      } else {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+      if (icon) {
+        icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
       }
     });
 
     // Close menu when clicking any nav link
-    navLinks.querySelectorAll('.nav-link').forEach(link => {
+    navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
         const icon = mobileToggle.querySelector('i');
-        if (icon) {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
-        }
+        if (icon) icon.className = 'fa-solid fa-bars';
       });
     });
-  }
 
-  // 2. Installation Platform Tabs (Android / Windows / iOS)
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabPanes = document.querySelectorAll('.tab-pane');
-
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const targetPlatform = button.getAttribute('data-tab');
-
-      // Update button active state
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      // Update pane visibility
-      tabPanes.forEach(pane => {
-        if (pane.id === `tab-${targetPlatform}`) {
-          pane.classList.add('active');
-        } else {
-          pane.classList.remove('active');
-        }
-      });
-    });
-  });
-
-  // 3. Smooth Step Navigator Jumper (Offset for fixed/sticky navbar)
-  const stepPills = document.querySelectorAll('.step-pill');
-  stepPills.forEach(pill => {
-    pill.addEventListener('click', (e) => {
-      const targetId = pill.getAttribute('href');
-      if (targetId && targetId.startsWith('#')) {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          const yOffset = -90; // Offset to clear sticky navbar
-          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-
-          // Temporarily highlight the card
-          targetElement.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
-          targetElement.style.borderColor = '#4f46e5';
-          targetElement.style.boxShadow = '0 0 0 4px rgba(79, 70, 229, 0.15)';
-          setTimeout(() => {
-            targetElement.style.borderColor = '';
-            targetElement.style.boxShadow = '';
-          }, 1500);
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+        if (navLinks.classList.contains('open')) {
+          navLinks.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          const icon = mobileToggle.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-bars';
         }
       }
     });
-  });
+  }
 
-  // 4. Interactive Simulation Feedback
-  const simPulseBtns = document.querySelectorAll('.sim-btn.pulse-btn');
-  simPulseBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fa-solid fa-check"></i> Sahi Choice!';
-      btn.style.background = '#10b981';
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-      }, 1800);
-    });
-  });
-
-  // 5. FAQ Accordion
+  // 2. FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');
-
   faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
-    questionBtn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
+    if (questionBtn) {
+      questionBtn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
 
-      // Close other open FAQ items for a clean accordion effect
-      faqItems.forEach(otherItem => otherItem.classList.remove('open'));
+        // Close other FAQ items for a clean single-open accordion
+        faqItems.forEach(other => {
+          if (other !== item) {
+            other.classList.remove('open');
+            const otherBtn = other.querySelector('.faq-question');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
 
-      // Toggle current item
-      if (!isOpen) {
-        item.classList.add('open');
-      }
-    });
-  });
-
-  // 6. Download Trigger & Feedback Toast
-  const directApkBtn = document.getElementById('directApkBtn');
-  const mirrorDownloadBtn = document.getElementById('mirrorDownloadBtn');
-  const heroDownloadBtn = document.getElementById('heroDownloadBtn');
-  const downloadToast = document.getElementById('downloadToast');
-  const toastClose = document.getElementById('toastClose');
-
-  function showDownloadToast() {
-    if (!downloadToast) return;
-    downloadToast.classList.add('show');
-
-    // Auto-hide toast after 5.5 seconds
-    setTimeout(() => {
-      downloadToast.classList.remove('show');
-    }, 5500);
-  }
-
-  if (toastClose) {
-    toastClose.addEventListener('click', () => {
-      downloadToast.classList.remove('show');
-    });
-  }
-
-  [directApkBtn, mirrorDownloadBtn, heroDownloadBtn].forEach(btn => {
-    if (btn) {
-      btn.addEventListener('click', () => {
-        showDownloadToast();
+        // Toggle current item
+        item.classList.toggle('open', !isOpen);
+        questionBtn.setAttribute('aria-expanded', !isOpen);
       });
     }
   });
 
-  // 7. Copy Link to Clipboard
+  // 3. Download Trigger & Feedback Toast
+  const downloadButtons = document.querySelectorAll(
+    '#heroDownloadBtn, #directApkBtn, #mirrorDownloadBtn, .mobile-sticky-btn, .mobile-nav-download'
+  );
+  const downloadToast = document.getElementById('downloadToast');
+  const toastClose = document.getElementById('toastClose');
+  let toastTimer = null;
+
+  function showDownloadToast() {
+    if (!downloadToast) return;
+    downloadToast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      downloadToast.classList.remove('show');
+    }, 5000);
+  }
+
+  downloadButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showDownloadToast();
+    });
+  });
+
+  if (toastClose) {
+    toastClose.addEventListener('click', () => {
+      downloadToast.classList.remove('show');
+      clearTimeout(toastTimer);
+    });
+  }
+
+  // 4. Share Link Copy to Clipboard
   const copyBtn = document.getElementById('copyBtn');
   const shareUrlInput = document.getElementById('shareUrlInput');
   const copyBtnText = document.getElementById('copyBtnText');
 
   if (copyBtn && shareUrlInput) {
-    // Populate current window URL if available
-    if (window.location.href && window.location.href.startsWith('http')) {
-      shareUrlInput.value = window.location.href;
+    // Populate current URL if loaded in web environment
+    if (window.location.protocol.startsWith('http')) {
+      shareUrlInput.value = window.location.href.split('#')[0];
     }
 
     copyBtn.addEventListener('click', async () => {
+      const textToCopy = shareUrlInput.value;
       try {
-        await navigator.clipboard.writeText(shareUrlInput.value);
-        const originalText = copyBtnText.innerText;
-        copyBtnText.innerText = 'Copied! ✓';
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(textToCopy);
+        } else {
+          shareUrlInput.select();
+          document.execCommand('copy');
+        }
+
+        const originalText = copyBtnText ? copyBtnText.textContent : 'Copy Link';
+        if (copyBtnText) copyBtnText.textContent = 'Copied! ✓';
         copyBtn.style.background = '#10b981';
 
         setTimeout(() => {
-          copyBtnText.innerText = originalText;
+          if (copyBtnText) copyBtnText.textContent = originalText;
           copyBtn.style.background = '';
-        }, 2500);
+        }, 2200);
       } catch (err) {
-        // Fallback for older browsers
         shareUrlInput.select();
         document.execCommand('copy');
-        copyBtnText.innerText = 'Copied! ✓';
-        setTimeout(() => {
-          copyBtnText.innerText = 'Copy Link';
-        }, 2000);
       }
     });
   }
 
-  // 8. Navbar Scroll Blur Elevation
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.style.boxShadow = '0 10px 30px -5px rgba(15, 23, 42, 0.12)';
-      navbar.style.borderColor = 'rgba(79, 70, 229, 0.2)';
-    } else {
-      navbar.style.boxShadow = '';
-      navbar.style.borderColor = '';
+  // 5. Mobile Sticky Bottom Bar Visibility on Scroll
+  const mobileStickyBar = document.getElementById('mobileStickyBar');
+  const heroSection = document.getElementById('home');
+
+  function handleScroll() {
+    // Navbar elevation
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+      if (window.scrollY > 30) {
+        navbar.style.boxShadow = '0 8px 24px -4px rgba(15, 23, 42, 0.12)';
+      } else {
+        navbar.style.boxShadow = '';
+      }
     }
+
+    // Mobile sticky download bar
+    if (mobileStickyBar && heroSection) {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      if (heroBottom < 100 && window.innerWidth <= 768) {
+        mobileStickyBar.classList.add('visible');
+      } else {
+        mobileStickyBar.classList.remove('visible');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll, { passive: true });
+  handleScroll();
+
+  // 6. Smooth Scroll with Navbar Offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const navOffset = 70;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
   });
 });

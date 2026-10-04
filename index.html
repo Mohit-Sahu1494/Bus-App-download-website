@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-  <meta name="description" content="Campus Bus — Dr. Hari Singh Gour Vishwavidyalaya, Sagar campus me bus ki live location track karein, apna pickup point select karein aur bus aane ka accurate samay janein. Size: 55 MB." />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="description" content="Campus Bus — Dr. Hari Singh Gour Vishwavidyalaya, Sagar campus me bus ki live location track karein, apna pickup point select karein aur accurate arrival alert payein. Direct APK (55 MB) free download." />
   <title>Campus Bus Tracker — Dr. Hari Singh Gour University (DHSGSU)</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Icons (FontAwesome CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -19,1029 +20,694 @@
 </head>
 <body>
 
-  <!-- Background Ambient Glows -->
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-  <div class="glow-orb orb-3"></div>
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow-wrapper" aria-hidden="true">
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
+  </div>
 
   <!-- NAVIGATION -->
   <header class="navbar-wrapper">
     <nav class="navbar" id="navbar">
-      <a href="#home" class="brand-logo">
+      <a href="#home" class="brand-logo" aria-label="Campus Bus DHSGSU Home">
         <div class="logo-icon">
           <i class="fa-solid fa-bus-simple"></i>
         </div>
         <div class="logo-text-group">
-          <span class="logo-text">Campus<span>Bus</span></span>
+          <span class="logo-text">Campus<strong>Bus</strong></span>
           <span class="logo-subtext">DHSGSU Sagar</span>
         </div>
       </a>
 
+      <!-- Desktop Nav Links -->
       <div class="nav-links" id="navLinks">
         <a href="#features" class="nav-link">Features</a>
         <a href="#routes" class="nav-link">Pickup Stops</a>
         <a href="#preview" class="nav-link">App Preview</a>
         <a href="#install" class="nav-link">How to Install</a>
         <a href="#faq" class="nav-link">FAQ</a>
+        <a href="app-release.apk" download="app-release.apk" class="nav-link mobile-nav-download">
+          <i class="fa-solid fa-download"></i> Download APK (55 MB)
+        </a>
       </div>
 
+      <!-- Action Buttons -->
       <div class="nav-actions">
-        <a href="#download" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-cloud-arrow-down"></i>
+        <a href="app-release.apk" download="app-release.apk" class="btn btn-primary btn-sm nav-download-btn">
+          <i class="fa-solid fa-download"></i>
           <span>Get App (55 MB)</span>
         </a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section" id="home">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <div class="badge-pill">
-          <span class="badge-dot"></span>
-          <span class="badge-text">🎓 Dr. Hari Singh Gour Vishwavidyalaya, Sagar • Live GPS Tracker</span>
-        </div>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
         
-        <h1 class="hero-title">
-          Campus Me Bus Ki <br />
-          <span class="gradient-text">Live Location Track</span> Karein!
-        </h1>
-        
-        <p class="hero-subtitle">
-          University campus me bus ka intezar karke apna samay barbad na karein! <strong>Campus Bus</strong> app se bus ki current location dekhein, apna <strong>Pickup Point</strong> select karein aur bus aane se pehle alert payein.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="hero-cta-group">
-          <a href="app-release.apk" download="app-release.apk" class="btn btn-primary btn-lg pulse-hover" id="heroDownloadBtn">
-            <i class="fa-brands fa-android"></i>
-            <div class="btn-text-block">
-              <span class="btn-subtext">Direct Free APK Download</span>
-              <span class="btn-maintext">Download Campus Bus (55.0 MB)</span>
-            </div>
-          </a>
-
-          <a href="#install" class="btn btn-secondary btn-lg">
-            <i class="fa-solid fa-circle-play"></i>
-            <span>Install Kaise Karein?</span>
-          </a>
-        </div>
-
-        <!-- Trust Badges & Campus Metrics -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-rating">
-              <i class="fa-solid fa-bus text-primary"></i>
-              <span class="rating-num">All Campus Buses</span>
-            </div>
-            <p class="stat-label">Live GPS Tracking On Campus</p>
+        <!-- Left Content -->
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            <span class="badge-text">🎓 Dr. Hari Singh Gour University, Sagar</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="security-tag">
+
+          <h1 class="hero-title">
+            Campus Me Bus Ki <br />
+            <span class="gradient-text">Live Location Track</span> Karein!
+          </h1>
+
+          <p class="hero-subtitle">
+            DHSGSU ke 1300+ acre campus me ab bus ka intezar nahi! <strong>Campus Bus</strong> app se har bus ki live location dekhein, apna <strong>Pickup Stop</strong> chunein aur bus aane se 5 minute pehle alert payein.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-cta-group">
+            <a href="app-release.apk" download="app-release.apk" class="btn btn-primary btn-lg hero-download-btn" id="heroDownloadBtn">
+              <i class="fa-brands fa-android"></i>
+              <div class="btn-text-block">
+                <span class="btn-subtext">Direct Free Download</span>
+                <span class="btn-maintext">Download Campus Bus (55 MB)</span>
+              </div>
+            </a>
+
+            <a href="#install" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Install Guide</span>
+            </a>
+          </div>
+
+          <!-- Quick Trust Badges -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <i class="fa-solid fa-location-dot text-primary"></i>
+              <div>
+                <strong>Live GPS</strong>
+                <span>All Campus Buses</span>
+              </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
               <i class="fa-solid fa-map-pin text-danger"></i>
-              <span>15+ Campus Pickup Stops</span>
+              <div>
+                <strong>15+ Stops</strong>
+                <span>Library, Hostels & Depts</span>
+              </div>
             </div>
-            <p class="stat-label">Library, Hostels, Admin & All Depts</p>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="security-tag">
-              <i class="fa-solid fa-shield-halved text-success"></i>
-              <span>Safe & Verified APK</span>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <i class="fa-solid fa-shield-check text-success"></i>
+              <div>
+                <strong>Verified APK</strong>
+                <span>100% Free & Safe</span>
+              </div>
             </div>
-            <p class="stat-label">100% Free For DHSGSU Students</p>
           </div>
         </div>
-      </div>
 
-      <!-- App Mockup Visual (Live Campus Bus Tracker UI) -->
-      <div class="hero-visual">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <!-- Simulated App UI inside Phone Screen -->
-            <div class="mock-status-bar">
-              <span>10:30 AM</span>
-              <div class="status-icons">
-                <i class="fa-solid fa-wifi"></i>
-                <i class="fa-solid fa-battery-full"></i>
-              </div>
-            </div>
-
-            <!-- Campus App Header -->
-            <div class="mock-header">
-              <div class="mock-user">
-                <div class="mock-avatar"><i class="fa-solid fa-bus"></i></div>
-                <div>
-                  <div class="mock-name">Campus Bus Tracker</div>
-                  <div class="mock-sub">DHSGSU, Sagar Campus</div>
-                </div>
-              </div>
-              <div class="mock-bell"><i class="fa-regular fa-bell"></i></div>
-            </div>
-
-            <!-- Selected Pickup Point Banner -->
-            <div class="mock-pickup-selector">
-              <div class="mock-pickup-label"><i class="fa-solid fa-location-dot"></i> Aapka Pickup Point:</div>
-              <div class="mock-pickup-val">
-                <span>Central Library (Nehru Library)</span>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-            </div>
-
-            <!-- Live Map Visual with Moving Bus -->
-            <div class="mock-map-view">
-              <div class="mock-map-route"></div>
+        <!-- Right App Visual (Clean Phone Mockup) -->
+        <div class="hero-visual">
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
               
-              <!-- Bus Marker -->
-              <div class="mock-bus-marker">
-                <i class="fa-solid fa-bus"></i>
-                <span class="mock-bus-badge">Bus #2 (Active)</span>
-              </div>
-
-              <!-- Pickup Stop Marker -->
-              <div class="mock-stop-marker">
-                <i class="fa-solid fa-person-walking"></i>
-                <span class="mock-stop-label">Your Stop</span>
-              </div>
-            </div>
-
-            <!-- Live Bus Status Card -->
-            <div class="mock-card">
-              <div class="mock-card-tag">Campus Bus No. 2 — Live Status</div>
-              <div class="mock-card-val">Pahunchne Wali Hai: 4 Min</div>
-              <div class="mock-meta-row">
-                <span><i class="fa-solid fa-gauge"></i> 25 km/h</span>
-                <span><i class="fa-solid fa-route"></i> 550m door</span>
-                <span><i class="fa-solid fa-users"></i> Moderate Crowd</span>
-              </div>
-              <div class="mock-progress-bar">
-                <div class="mock-progress-fill" style="width: 78%;"></div>
-              </div>
-            </div>
-
-            <!-- Quick Stops Bar -->
-            <div class="mock-recent">
-              <div class="mock-recent-title">Agla Stop: Girls Hostel No. 2</div>
-              <div class="mock-list-item">
-                <div class="mock-dot green"></div>
-                <div>Admin Block &gt; Library &gt; Science Faculty</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating Glass Badges -->
-        <div class="floating-badge badge-left">
-          <div class="badge-icon-wrap"><i class="fa-solid fa-location-crosshairs"></i></div>
-          <div>
-            <strong>Live GPS</strong>
-            <p>Real-Time Bus Location</p>
-          </div>
-        </div>
-
-        <div class="floating-badge badge-right">
-          <div class="badge-icon-wrap shield"><i class="fa-solid fa-box-archive"></i></div>
-          <div>
-            <strong>Size: 55.0 MB</strong>
-            <p>Full Offline Campus Maps</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HIGHLIGHTS BAR -->
-  <section class="highlights-bar">
-    <div class="container highlights-container">
-      <div class="highlight-box">
-        <i class="fa-solid fa-map-location-dot"></i>
-        <div>
-          <h4>Real-Time Live Location</h4>
-          <p>Campus me chal rahi har bus ki exact location dekhein</p>
-        </div>
-      </div>
-      <div class="highlight-box">
-        <i class="fa-solid fa-street-view"></i>
-        <div>
-          <h4>Pickup Point Selection</h4>
-          <p>Apna hostel, library ya department stop chunein</p>
-        </div>
-      </div>
-      <div class="highlight-box">
-        <i class="fa-solid fa-stopwatch"></i>
-        <div>
-          <h4>Accurate ETA Countdown</h4>
-          <p>Bus kab aapke stop par aayegi, exact countdown dekhein</p>
-        </div>
-      </div>
-      <div class="highlight-box">
-        <i class="fa-solid fa-hard-drive"></i>
-        <div>
-          <h4>55 MB Optimized App</h4>
-          <p>Fast campus maps, battery-saver & zero lag UI</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES SECTION -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Campus Special Features</span>
-        <h2 class="section-title">Kyun Zaroori Hai <span class="gradient-text">Campus Bus App?</span></h2>
-        <p class="section-desc">Dr. Hari Singh Gour University ka campus 1300+ acre bada hai. Is app ke sath aapka ek bhi lecture ya practical miss nahi hoga!</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon bg-indigo">
-            <i class="fa-solid fa-location-arrow"></i>
-          </div>
-          <h3>Live GPS Satellite Tracking</h3>
-          <p>Buses me lage GPS devices se high-precision real-time tracking hoti hai. Map par bus ko live chalte hue dekhein bina kisi delay ke.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon bg-emerald">
-            <i class="fa-solid fa-person-walking-luggage"></i>
-          </div>
-          <h3>Apna Pickup Point Select Karein</h3>
-          <p>Hostel, Main Gate, Science Block, Canteen ya Central Library — jahan se bhi bus pakadni ho, us point ko select karein aur bus track karein.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon bg-rose">
-            <i class="fa-solid fa-bell"></i>
-          </div>
-          <h3>Arrival Alert Notification</h3>
-          <p>Bus aapke pickup stop par aane se 5 minute pehle aapke phone par notification aayega, taaki aap aaram se stop par pahunch sakein.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon bg-amber">
-            <i class="fa-solid fa-calendar-days"></i>
-          </div>
-          <h3>Daily Campus Bus Schedule</h3>
-          <p>Subah 8:00 AM se shaam 6:30 PM tak sabhi university buses ka departure aur arrival timetable hamesha aapki jeb me rahega.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon bg-sky">
-            <i class="fa-solid fa-tower-broadcast"></i>
-          </div>
-          <h3>Low Network Offline Caching</h3>
-          <p>DHSGSU campus ke pahadi aur kam network wale ilaqon me bhi app ka pre-cached 55 MB database aur campus map bina freeze hue chalta hai.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon bg-purple">
-            <i class="fa-solid fa-phone-volume"></i>
-          </div>
-          <h3>Emergency Helpline & Drivers Directory</h3>
-          <p>Kissi bhi emergency, lost-and-found ya rush ke samay direct bus coordinators aur university transport cell se sampark karein.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAMPUS PICKUP POINTS LIST / STOPS -->
-  <section class="routes-section" id="routes">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Campus Routes</span>
-        <h2 class="section-title">Covered <span class="gradient-text">Pickup Points & Stops</span></h2>
-        <p class="section-desc">App me Dr. Hari Singh Gour Vishwavidyalaya ke sabhi mukhya sthal shamil hain:</p>
-      </div>
-
-      <div class="stops-grid">
-        <div class="stop-badge-card">
-          <i class="fa-solid fa-archway"></i>
-          <div>
-            <h5>Main University Gate</h5>
-            <span>Sagar-Jabalpur Road Entry Point</span>
-          </div>
-        </div>
-
-        <div class="stop-badge-card">
-          <i class="fa-solid fa-building-columns"></i>
-          <div>
-            <h5>Administrative Bhawan</h5>
-            <span>VC Office & Academic Section</span>
-          </div>
-        </div>
-
-        <div class="stop-badge-card highlight-stop">
-          <i class="fa-solid fa-book-bookmark"></i>
-          <div>
-            <h5>Central Library (Pt. Nehru)</h5>
-            <span>Most Popular Student Stop</span>
-          </div>
-        </div>
-
-        <div class="stop-badge-card">
-          <i class="fa-solid fa-flask-vial"></i>
-          <div>
-            <h5>School of Science</h5>
-            <span>Physics, Chemistry & Math Depts</span>
-          </div>
-        </div>
-
-        <div class="stop-badge-card">
-          <i class="fa-solid fa-person-shelter"></i>
-          <div>
-            <h5>Tagore Girls Hostel</h5>
-            <span>Hostel Complex Stop 1</span>
-          </div>
-        </div>
-
-        <div class="stop-badge-card">
-          <i class="fa-solid fa-hotel"></i>
-          <div>
-            <h5>C.V. Raman Boys Hostel</h5>
-            <span>Hostel Complex Stop 2</span>
-          </div>
-        </div>
-
-        <div class="stop-badge-card">
-          <i class="fa-solid fa-microchip"></i>
-          <div>
-            <h5>Engineering & Tech Dept</h5>
-            <span>Applied Science & Tech Block</span>
-          </div>
-        </div>
-
-        <div class="stop-badge-card">
-          <i class="fa-solid fa-heart-pulse"></i>
-          <div>
-            <h5>University Health Centre</h5>
-            <span>Medical & Sports Ground Stop</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCREENSHOTS / PREVIEW SECTION -->
-  <section class="preview-section" id="preview">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">App Tour</span>
-        <h2 class="section-title">Campus Bus App <span class="gradient-text">Screen Preview</span></h2>
-        <p class="section-desc">Students ke liye banaya gaya aasan, tez aur intuitive interface.</p>
-      </div>
-
-      <div class="preview-slider">
-        <!-- Screen 1: Live Map Tracking -->
-        <div class="preview-card">
-          <div class="preview-mockup">
-            <div class="mockup-header-bar">
-              <span class="tag">Live Campus Map</span>
-              <span class="live-pill"><i class="fa-solid fa-circle"></i> Live GPS</span>
-            </div>
-            <div class="preview-content">
-              <div class="preview-route-box">
-                <div class="bus-icon-animated"><i class="fa-solid fa-bus"></i></div>
-                <div class="route-line"></div>
-                <div class="stop-dot"></div>
-              </div>
-              <div class="demo-card-skeleton"></div>
-              <div class="demo-card-skeleton short"></div>
-              <div class="demo-list">
-                <div class="demo-list-row bus-row">
-                  <span>Bus #1 • Patharia Hills Route</span>
-                  <strong>3 Min ETA</strong>
-                </div>
-                <div class="demo-list-row bus-row">
-                  <span>Bus #3 • Hostel Shuttle</span>
-                  <strong>8 Min ETA</strong>
+              <!-- Phone Status Bar -->
+              <div class="phone-top-bar">
+                <span class="phone-time">10:30 AM</span>
+                <div class="phone-status-icons">
+                  <i class="fa-solid fa-wifi"></i>
+                  <i class="fa-solid fa-battery-full"></i>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="preview-caption">
-            <h4>Live Tracking Map</h4>
-            <p>1300+ acre campus me har bus ki live position</p>
-          </div>
-        </div>
 
-        <!-- Screen 2: Pickup Point Selection -->
-        <div class="preview-card active-card">
-          <div class="preview-mockup primary-accent">
-            <div class="mockup-header-bar">
-              <span class="tag accent">Pickup Selector</span>
-              <span class="accent-badge">Smart Auto-Alert</span>
-            </div>
-            <div class="preview-content">
-              <div class="pickup-demo-box">
-                <label><i class="fa-solid fa-location-dot"></i> Apna Stop Chunein:</label>
-                <div class="pickup-input-mock">Central Library Stop <i class="fa-solid fa-circle-check text-success"></i></div>
+              <!-- App Header Inside Phone -->
+              <div class="app-ui-header">
+                <div class="app-ui-title-group">
+                  <div class="app-bus-icon"><i class="fa-solid fa-bus"></i></div>
+                  <div>
+                    <div class="app-title">Campus Bus DHSGSU</div>
+                    <div class="app-subtitle">Patharia Hills Campus, Sagar</div>
+                  </div>
+                </div>
+                <div class="app-live-indicator">
+                  <span class="live-dot"></span> LIVE
+                </div>
               </div>
-              <div class="demo-pill-group">
-                <span class="demo-pill active">Main Gate</span>
-                <span class="demo-pill active">Library</span>
-                <span class="demo-pill">Hostels</span>
-                <span class="demo-pill">Science Dept</span>
+
+              <!-- Pickup Stop Selector Card -->
+              <div class="app-selector-card">
+                <div class="app-selector-label">
+                  <i class="fa-solid fa-location-dot text-danger"></i> Aapka Pickup Stop:
+                </div>
+                <div class="app-selector-val">
+                  <span>Central Library (Pt. Nehru)</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
               </div>
-              <div class="alert-mock-box">
+
+              <!-- Simulated Map View -->
+              <div class="app-map-box">
+                <div class="app-map-grid"></div>
+                <div class="app-route-line"></div>
+                
+                <!-- Bus Pin -->
+                <div class="app-bus-pin">
+                  <i class="fa-solid fa-bus"></i>
+                  <span class="bus-tag">Bus #2</span>
+                </div>
+
+                <!-- Stop Pin -->
+                <div class="app-stop-pin">
+                  <i class="fa-solid fa-flag"></i>
+                  <span class="stop-tag">Library Stop</span>
+                </div>
+              </div>
+
+              <!-- Live Bus Status Card -->
+              <div class="app-status-card">
+                <div class="status-top">
+                  <span class="status-bus-name">Bus #2 — Route A</span>
+                  <span class="status-eta-badge">ETA: 4 Min</span>
+                </div>
+                <div class="status-progress-track">
+                  <div class="status-progress-fill" style="width: 75%;"></div>
+                </div>
+                <div class="status-info-row">
+                  <span><i class="fa-solid fa-gauge-high"></i> 25 km/h</span>
+                  <span><i class="fa-solid fa-route"></i> 550m Door</span>
+                  <span><i class="fa-solid fa-users"></i> Available Seats</span>
+                </div>
+              </div>
+
+              <!-- Alert Notification Card -->
+              <div class="app-notification-card">
                 <i class="fa-solid fa-bell text-warning"></i>
-                <span>Bus #2 aane me 4 minute bache hain! Kripya stop par pahuchein.</span>
+                <div>
+                  <strong>Arrival Alert</strong>
+                  <p>Bus agle stop par pahunchne wali hai!</p>
+                </div>
               </div>
+
             </div>
-          </div>
-          <div class="preview-caption">
-            <h4>Pickup Point Selector</h4>
-            <p>Single tap me apna stop select karein aur reminder payein</p>
           </div>
         </div>
 
-        <!-- Screen 3: Timetable & Contacts -->
-        <div class="preview-card">
-          <div class="preview-mockup">
-            <div class="mockup-header-bar">
-              <span class="tag">Bus Timetable</span>
-              <span class="time-tag">Updated 2026</span>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS / QUICK STATS BAR -->
+    <section class="highlights-bar">
+      <div class="container">
+        <div class="highlights-grid">
+          <div class="highlight-item">
+            <div class="highlight-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+            <div class="highlight-text">
+              <h4>Real-Time Live GPS</h4>
+              <p>Har campus bus ki accurate speed aur location</p>
             </div>
-            <div class="preview-content">
-              <div class="demo-list">
-                <div class="demo-list-row schedule-row">
-                  <span>Trip 1 (Morning)</span>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon"><i class="fa-solid fa-street-view"></i></div>
+            <div class="highlight-text">
+              <h4>Pickup Point Selection</h4>
+              <p>Apna hostel, library ya faculty stop chunein</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="highlight-text">
+              <h4>5-Min Arrival Alert</h4>
+              <p>Stop par aane se pehle phone par reminder</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon"><i class="fa-solid fa-hard-drive"></i></div>
+            <div class="highlight-text">
+              <h4>55 MB Offline Cache</h4>
+              <p>Low network me bhi fast campus offline maps</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY FEATURES SECTION -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Campus Features</span>
+          <h2 class="section-title">Kyun Zaroori Hai <span class="gradient-text">Campus Bus App?</span></h2>
+          <p class="section-desc">Dr. Hari Singh Gour University ka campus 1300+ acre pathari ilaqe par phaila hai. Is app ke sath lecture aur practical me kabhi deri nahi hogi.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon color-indigo">
+              <i class="fa-solid fa-location-crosshairs"></i>
+            </div>
+            <h3>Live GPS Satellite Tracking</h3>
+            <p>University buses me lage live GPS transmitters se map par bus ko live chalte hue dekhein bina kisi delay ke.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon color-emerald">
+              <i class="fa-solid fa-person-walking-luggage"></i>
+            </div>
+            <h3>Apna Pickup Stop Select Karein</h3>
+            <p>Hostel, Main Gate, Science Block, Canteen ya Central Library — single click me apna pickup point chunein.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon color-amber">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <h3>Arrival Alert Notification</h3>
+            <p>Bus aapke pickup stop par pahunchne se 5 minute pehle phone par alert aayega, taaki time par stop par pahuchein.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon color-rose">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3>Daily Bus Schedule Timetable</h3>
+            <p>Subah 8:00 AM se shaam 6:30 PM tak sabhi routes ka exact departure timetable hamesha aapki jeb me rahega.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon color-sky">
+              <i class="fa-solid fa-wifi"></i>
+            </div>
+            <h3>Low Network Offline Caching</h3>
+            <p>Campus ke kam signal wale corners me bhi pre-cached 55 MB database aur vector maps bina rukaawat chalta hai.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon color-purple">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <h3>Transport Cell & Driver Directory</h3>
+            <p>Lost &amp; found, rush ya kisi bhi emergency me direct bus in-charge aur university transport cell se baat karein.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAMPUS STOPS SECTION -->
+    <section class="routes-section" id="routes">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Campus Routes</span>
+          <h2 class="section-title">Covered <span class="gradient-text">Pickup Points & Stops</span></h2>
+          <p class="section-desc">App me Dr. Hari Singh Gour University ke sabhi mukhya pickup points shamil hain:</p>
+        </div>
+
+        <div class="stops-grid">
+          <div class="stop-card">
+            <div class="stop-icon"><i class="fa-solid fa-archway"></i></div>
+            <div class="stop-info">
+              <h5>Main University Gate</h5>
+              <span>Sagar-Jabalpur Road Entrance</span>
+            </div>
+          </div>
+
+          <div class="stop-card highlight">
+            <div class="stop-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+            <div class="stop-info">
+              <h5>Central Library (Pt. Nehru)</h5>
+              <span>Central Student Hub • High Frequency</span>
+            </div>
+          </div>
+
+          <div class="stop-card">
+            <div class="stop-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <div class="stop-info">
+              <h5>Administrative Bhawan</h5>
+              <span>VC Office & Academic Section</span>
+            </div>
+          </div>
+
+          <div class="stop-card">
+            <div class="stop-icon"><i class="fa-solid fa-flask-vial"></i></div>
+            <div class="stop-info">
+              <h5>School of Science</h5>
+              <span>Physics, Chemistry & Math Depts</span>
+            </div>
+          </div>
+
+          <div class="stop-card">
+            <div class="stop-icon"><i class="fa-solid fa-person-shelter"></i></div>
+            <div class="stop-info">
+              <h5>Tagore Girls Hostel</h5>
+              <span>Girls Hostel Complex Stop</span>
+            </div>
+          </div>
+
+          <div class="stop-card">
+            <div class="stop-icon"><i class="fa-solid fa-hotel"></i></div>
+            <div class="stop-info">
+              <h5>C.V. Raman Boys Hostel</h5>
+              <span>Boys Hostel Complex Stop</span>
+            </div>
+          </div>
+
+          <div class="stop-card">
+            <div class="stop-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="stop-info">
+              <h5>Engineering & Tech Dept</h5>
+              <span>Applied Sciences & Computer Block</span>
+            </div>
+          </div>
+
+          <div class="stop-card">
+            <div class="stop-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="stop-info">
+              <h5>University Health Centre</h5>
+              <span>Medical Centre & Sports Ground</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP PREVIEW SECTION -->
+    <section class="preview-section" id="preview">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">App Tour</span>
+          <h2 class="section-title">Aasan &amp; Simple <span class="gradient-text">App Preview</span></h2>
+          <p class="section-desc">Students ke liye fast aur clean design jo kisi bhi Android phone par smooth chalta hai.</p>
+        </div>
+
+        <div class="preview-grid">
+          <!-- Card 1 -->
+          <div class="preview-card">
+            <div class="preview-card-header">
+              <span class="preview-badge"><i class="fa-solid fa-map"></i> Screen 1</span>
+              <h4>Live GPS Tracking Map</h4>
+            </div>
+            <div class="preview-card-body">
+              <div class="mini-app-screen">
+                <div class="mini-bus-track">
+                  <div class="mini-bus-icon"><i class="fa-solid fa-bus"></i></div>
+                  <div class="mini-track-line"></div>
+                  <div class="mini-stop-dot"></div>
+                </div>
+                <div class="mini-bus-item">
+                  <div class="mini-bus-title">Bus #1 (Admin &gt; Hostels)</div>
+                  <span class="badge-success">3 Min Door</span>
+                </div>
+                <div class="mini-bus-item">
+                  <div class="mini-bus-title">Bus #2 (Main Gate &gt; Library)</div>
+                  <span class="badge-success">7 Min Door</span>
+                </div>
+              </div>
+            </div>
+            <p class="preview-card-desc">1300+ acre campus me har moving bus ki live location map par dekhein.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="preview-card active">
+            <div class="preview-card-header">
+              <span class="preview-badge highlight"><i class="fa-solid fa-location-dot"></i> Screen 2</span>
+              <h4>Pickup Selector &amp; Alert</h4>
+            </div>
+            <div class="preview-card-body">
+              <div class="mini-app-screen">
+                <div class="mini-selector-box">
+                  <label><i class="fa-solid fa-location-arrow"></i> Chuna Hua Stop:</label>
+                  <strong>Central Library Stop <i class="fa-solid fa-circle-check text-success"></i></strong>
+                </div>
+                <div class="mini-alert-pill">
+                  <i class="fa-solid fa-bell text-warning"></i>
+                  <span>Bus #2 aane me 4 minute bache hain!</span>
+                </div>
+                <div class="mini-btn-mock">
+                  <i class="fa-solid fa-volume-high"></i> Alert Set Active
+                </div>
+              </div>
+            </div>
+            <p class="preview-card-desc">Apna stop chunein aur bus pahunchne se pehle accurate notification payein.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="preview-card">
+            <div class="preview-card-header">
+              <span class="preview-badge"><i class="fa-solid fa-clock"></i> Screen 3</span>
+              <h4>Daily Schedule &amp; Helpdesk</h4>
+            </div>
+            <div class="preview-card-body">
+              <div class="mini-app-screen">
+                <div class="mini-schedule-item">
+                  <span>Trip 1 (Morning Shift)</span>
                   <strong>08:15 AM</strong>
                 </div>
-                <div class="demo-list-row schedule-row">
-                  <span>Trip 2 (Mid-Day)</span>
+                <div class="mini-schedule-item">
+                  <span>Trip 2 (Mid-Day Shift)</span>
                   <strong>11:30 AM</strong>
                 </div>
-                <div class="demo-list-row schedule-row">
-                  <span>Trip 3 (Afternoon)</span>
+                <div class="mini-schedule-item">
+                  <span>Trip 3 (Afternoon Shift)</span>
                   <strong>02:00 PM</strong>
                 </div>
-                <div class="demo-list-row schedule-row">
-                  <span>Trip 4 (Evening)</span>
-                  <strong>05:15 PM</strong>
+                <div class="mini-call-btn">
+                  <i class="fa-solid fa-phone"></i> Transport Helpdesk Call
                 </div>
               </div>
-              <div class="driver-call-mock">
-                <i class="fa-solid fa-phone"></i> Transport Helpdesk Direct Call
-              </div>
             </div>
-          </div>
-          <div class="preview-caption">
-            <h4>Daily Bus Timetable</h4>
-            <p>Subah se shaam tak complete schedule & helpline</p>
+            <p class="preview-card-desc">Poore din ka campus timetable aur emergency contacts hamesha uplabdh.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- INSTALLATION GUIDE SECTION (Detailed Step-by-Step for University Students) -->
-  <section class="install-section" id="install">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Aasan & Complete Guide</span>
-        <h2 class="section-title">Phone Me <span class="gradient-text">Campus Bus (55 MB)</span> Kaise Install Karein?</h2>
-        <p class="section-desc">Pehli baar university APK download kar rahe hain? Niche diye gaye 6 aasan steps ko follow karein aur 1 minute me install karein.</p>
-      </div>
-
-      <!-- Installation Tabs (Android APK / Windows / iOS) -->
-      <div class="tabs-container">
-        <div class="install-tabs">
-          <button class="tab-btn active" data-tab="android">
-            <i class="fa-brands fa-android"></i> Android Phone (Full Step-by-Step)
-          </button>
-          <button class="tab-btn" data-tab="windows">
-            <i class="fa-brands fa-windows"></i> Windows PC / Emulator
-          </button>
-          <button class="tab-btn" data-tab="ios">
-            <i class="fa-brands fa-apple"></i> iPhone / iPad (iOS Web App)
-          </button>
-        </div>
-      </div>
-
-      <!-- Tab Content: Android APK (Detailed 6-Step Guide) -->
-      <div class="tab-pane active" id="tab-android">
-
-        <!-- Step Jump Bar -->
-        <div class="step-navigator">
-          <span class="nav-title">Steps Par Jayein:</span>
-          <div class="step-nav-pills">
-            <a href="#step-1" class="step-pill">1. Download (55 MB)</a>
-            <a href="#step-2" class="step-pill">2. Warning Alert</a>
-            <a href="#step-3" class="step-pill">3. Open APK</a>
-            <a href="#step-4" class="step-pill">4. Settings Permission</a>
-            <a href="#step-5" class="step-pill">5. Tap Install</a>
-            <a href="#step-6" class="step-pill">6. Open & Track</a>
-          </div>
+    <!-- SIMPLE INSTALLATION GUIDE -->
+    <section class="install-section" id="install">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Aasan Step-by-Step Guide</span>
+          <h2 class="section-title">Phone Me <span class="gradient-text">Campus Bus (55 MB)</span> Kaise Install Karein?</h2>
+          <p class="section-desc">APK file install karna bilkul aasan hai. Bas ye 5 simple kadam follow karein aur 1 minute me install karein:</p>
         </div>
 
-        <div class="steps-flow-container">
+        <!-- 5 Simple Steps -->
+        <div class="install-steps-grid">
           
-          <!-- STEP 1 -->
-          <div class="step-full-card" id="step-1">
-            <div class="step-header-row">
-              <div class="step-index-badge">01</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead">Kadam 1 • Download Shuru Karein</span>
-                <h3 class="step-heading">"Download Campus Bus (55 MB)" Button Par Click Karein</h3>
-              </div>
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-num">1</span>
+              <div class="step-icon-wrap"><i class="fa-solid fa-cloud-arrow-down"></i></div>
             </div>
-
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>Website par diye gaye <strong>"Download Campus Bus (55.0 MB)"</strong> button par tap karein. Aapke phone ke browser (Google Chrome / Samsung Internet) me file download hona shuru ho jayegi.</p>
-                <ul class="step-checklist">
-                  <li><i class="fa-solid fa-circle-check"></i> File ka size exact <strong>55.0 MB</strong> hai (isme DHSGSU campus ke sabhi offline maps shamil hain).</li>
-                  <li><i class="fa-solid fa-circle-check"></i> Jio/Airtel 5G/4G ya Campus Wi-Fi par 10 se 20 second me download ho jati hai.</li>
-                </ul>
-                <div class="step-note info">
-                  <i class="fa-solid fa-circle-info"></i>
-                  <div><strong>Dhyan Dein:</strong> Download progress aap apne phone ke top notification shade me dekh sakte hain.</div>
-                </div>
-              </div>
-
-              <!-- Realistic UI Simulation: Download in Progress -->
-              <div class="step-ui-simulation">
-                <div class="sim-phone-header">
-                  <span class="sim-dot red"></span>
-                  <span class="sim-dot yellow"></span>
-                  <span class="sim-dot green"></span>
-                  <span class="sim-title">Google Chrome Browser</span>
-                </div>
-                <div class="sim-body">
-                  <div class="sim-download-bar">
-                    <div class="sim-file-icon"><i class="fa-solid fa-bus"></i></div>
-                    <div class="sim-file-info">
-                      <div class="sim-filename">app-release.apk</div>
-                      <div class="sim-meta">Downloading file... 38.5 MB / 55.0 MB</div>
-                      <div class="sim-progress-track">
-                        <div class="sim-progress-fill" style="width: 70%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h4>APK File Download Karein</h4>
+            <p>Niche diye gaye <strong>"Download Campus Bus (55 MB)"</strong> button par tap karein. Browser me file download hona shuru ho jayegi.</p>
+            <div class="step-hint">
+              <i class="fa-solid fa-circle-check text-success"></i> File size exact 55.0 MB hai (Offline maps cached).
             </div>
           </div>
 
-          <!-- STEP 2 -->
-          <div class="step-full-card highlight-step" id="step-2">
-            <div class="step-header-row">
-              <div class="step-index-badge alert">02</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead alert-text">Kadam 2 • Important Security Popup</span>
-                <h3 class="step-heading">"File might be harmful" Warning Par "Download anyway" Dabayen</h3>
-              </div>
+          <!-- Step 2 -->
+          <div class="step-card highlight">
+            <div class="step-top">
+              <span class="step-num warning">2</span>
+              <div class="step-icon-wrap warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
             </div>
-
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>Chrome me download shuru karte hi screen ke niche standard warning aayegi:</p>
-                <div class="quote-dialog-box">
-                  <i class="fa-solid fa-triangle-exclamation text-warning"></i>
-                  <span>"File might be harmful. Do you want to download app-release.apk anyway?"</span>
-                </div>
-                <p><strong>Ghabraye nahi!</strong> Android sabhi un apps par ye message show karta hai jo Play Store ke bahar se aati hain. Hamara <strong>Campus Bus</strong> app 100% Virus-Free aur Dr. Hari Singh Gour University students ke liye safe hai.</p>
-                <p class="action-instruction"><strong>Aapko kya karna hai:</strong> Right side me diye gaye <strong>"Download anyway"</strong> button par tap karein.</p>
-                
-                <div class="step-note warning">
-                  <i class="fa-solid fa-shield-halved"></i>
-                  <div><strong>100% Safe:</strong> Is app me koi advertisement ya unnecessary tracking permission nahi hai.</div>
-                </div>
-              </div>
-
-              <!-- Realistic UI Simulation: Chrome Harmful Alert Popup -->
-              <div class="step-ui-simulation">
-                <div class="sim-phone-header">
-                  <span class="sim-dot"></span>
-                  <span class="sim-title">Android System Security Alert</span>
-                </div>
-                <div class="sim-body">
-                  <div class="sim-alert-box">
-                    <div class="sim-alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                    <div class="sim-alert-title">File might be harmful</div>
-                    <div class="sim-alert-desc">Do you want to download app-release.apk anyway?</div>
-                    <div class="sim-btn-group">
-                      <button class="sim-btn sim-btn-cancel">Cancel</button>
-                      <button class="sim-btn sim-btn-primary pulse-btn">Download anyway <i class="fa-solid fa-hand-pointer finger-icon"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h4>"Download anyway" Dabayen</h4>
+            <p>Chrome me <em>"File might be harmful"</em> alert aane par <strong>"Download anyway"</strong> par tap karein.</p>
+            <div class="step-hint warning">
+              <i class="fa-solid fa-shield-halved text-warning"></i> DHSGSU students ke liye 100% Virus-Free & Safe!
             </div>
           </div>
 
-          <!-- STEP 3 -->
-          <div class="step-full-card" id="step-3">
-            <div class="step-header-row">
-              <div class="step-index-badge">03</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead">Kadam 3 • File Open Karein</span>
-                <h3 class="step-heading">Download Complete Hote Hi File Par Tap Karein</h3>
-              </div>
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-num">3</span>
+              <div class="step-icon-wrap"><i class="fa-solid fa-bell"></i></div>
             </div>
-
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>55 MB download complete hote hi notification aayega. File open karne ke 2 aasan tarike hain:</p>
-                
-                <div class="method-card">
-                  <strong><i class="fa-solid fa-bell"></i> Tarika 1 (Direct Notification):</strong>
-                  <p>Screen ke upar se Notification bar niche kheenchain aur <strong>"app-release.apk — Download complete"</strong> par tap karein.</p>
-                </div>
-
-                <div class="method-card">
-                  <strong><i class="fa-solid fa-folder-open"></i> Tarika 2 (Chrome Downloads):</strong>
-                  <p>Chrome ke upar 3-dots <strong>(⋮)</strong> par click karein aur <strong>"Downloads"</strong> menu me jakar <code>app-release.apk</code> par tap karein.</p>
-                </div>
-              </div>
-
-              <!-- Realistic UI Simulation: Notification Panel -->
-              <div class="step-ui-simulation">
-                <div class="sim-phone-header">
-                  <span class="sim-dot"></span>
-                  <span class="sim-title">Notification Shade</span>
-                </div>
-                <div class="sim-body">
-                  <div class="sim-notification-card">
-                    <div class="sim-notif-app">
-                      <i class="fa-brands fa-chrome"></i>
-                      <span>Chrome • Abhi-abhi</span>
-                    </div>
-                    <div class="sim-notif-content">
-                      <div class="sim-notif-title">app-release.apk (55 MB)</div>
-                      <div class="sim-notif-subtitle">Download complete • Tap to open and install</div>
-                    </div>
-                    <span class="sim-notif-badge">Tap Here <i class="fa-solid fa-arrow-right"></i></span>
-                  </div>
-                </div>
-              </div>
+            <h4>Notification Se File Kholein</h4>
+            <p>Download pura hote hi notification bar se ya Chrome ke <strong>Downloads</strong> folder me jakar <code>app-release.apk</code> par click karein.</p>
+            <div class="step-hint">
+              <i class="fa-solid fa-arrow-pointer text-primary"></i> Notification me "Download complete" par tap karein.
             </div>
           </div>
 
-          <!-- STEP 4 -->
-          <div class="step-full-card highlight-step" id="step-4">
-            <div class="step-header-row">
-              <div class="step-index-badge alert">04</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead alert-text">Kadam 4 • Unknown Sources Permission</span>
-                <h3 class="step-heading">"Allow from this source" Settings Ko ON Karein</h3>
-              </div>
+          <!-- Step 4 -->
+          <div class="step-card highlight">
+            <div class="step-top">
+              <span class="step-num alert">4</span>
+              <div class="step-icon-wrap alert"><i class="fa-solid fa-gear"></i></div>
             </div>
-
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>Pehli baar direct app install karne par Android ka security alert aayega:</p>
-                <div class="quote-dialog-box">
-                  <i class="fa-solid fa-lock text-primary"></i>
-                  <span>"For your security, your phone is not allowed to install unknown apps from this source."</span>
-                </div>
-
-                <div class="numbered-instruction-box">
-                  <div class="num-step">
-                    <span class="circle-num">1</span>
-                    <span>Popup me <strong>"Settings"</strong> button par tap karein.</span>
-                  </div>
-                  <div class="num-step">
-                    <span class="circle-num">2</span>
-                    <span><strong>"Allow from this source"</strong> (इस स्रोत से अनुमति दें) switch ko <strong>ON (Green/Blue)</strong> karein.</span>
-                  </div>
-                  <div class="num-step">
-                    <span class="circle-num">3</span>
-                    <span>Phone ka <strong>Back button (←)</strong> dabakar install screen par wapas aayein.</span>
-                  </div>
-                </div>
-
-                <div class="step-note warning">
-                  <i class="fa-solid fa-mobile-screen-button"></i>
-                  <div><strong>Xiaomi / Redmi / Realme Phones:</strong> Agar 10-second countdown aaye, to <em>"I am aware of possible risks"</em> par tick lagakar <strong>OK</strong> dabayein.</div>
-                </div>
-              </div>
-
-              <!-- Realistic UI Simulation: Android Settings Toggle -->
-              <div class="step-ui-simulation">
-                <div class="sim-phone-header">
-                  <span class="sim-dot"></span>
-                  <span class="sim-title">Settings &gt; Install unknown apps</span>
-                </div>
-                <div class="sim-body">
-                  <div class="sim-settings-screen">
-                    <div class="sim-settings-header">
-                      <i class="fa-solid fa-arrow-left"></i>
-                      <span>Install unknown apps</span>
-                    </div>
-                    <div class="sim-app-row">
-                      <div class="sim-app-icon"><i class="fa-brands fa-chrome"></i></div>
-                      <div class="sim-app-details">
-                        <div class="sim-app-name">Chrome</div>
-                        <div class="sim-app-sub">Version 128.0</div>
-                      </div>
-                    </div>
-                    <div class="sim-toggle-row">
-                      <span>Allow from this source</span>
-                      <div class="sim-switch on">
-                        <div class="sim-switch-knob"></div>
-                      </div>
-                    </div>
-                    <p class="sim-toggle-desc">Is option ko ON karne ke baad Back button dabayein.</p>
-                  </div>
-                </div>
-              </div>
+            <h4>"Allow from this source" ON Karein</h4>
+            <p>Agar phone me <em>"Install unknown apps"</em> popup aaye, to <strong>Settings</strong> me jakar switch ko <strong>ON</strong> kar dein aur Back aayein.</p>
+            <div class="step-hint alert">
+              <i class="fa-solid fa-toggle-on text-primary"></i> Redmi/Xiaomi me 10s wait karke OK dabayein.
             </div>
           </div>
 
-          <!-- STEP 5 -->
-          <div class="step-full-card" id="step-5">
-            <div class="step-header-row">
-              <div class="step-index-badge">05</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead">Kadam 5 • Final Installation</span>
-                <h3 class="step-heading">"Install" Button Par Tap Karein</h3>
-              </div>
+          <!-- Step 5 -->
+          <div class="step-card success">
+            <div class="step-top">
+              <span class="step-num success">5</span>
+              <div class="step-icon-wrap success"><i class="fa-solid fa-check"></i></div>
             </div>
-
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>Ab screen par Android Package Installer dialog khulega:</p>
-                <div class="quote-dialog-box">
-                  <i class="fa-solid fa-bus text-primary"></i>
-                  <span>"Do you want to install this application?"</span>
-                </div>
-                <p>Screen ke niche right-side par <strong>"Install"</strong> button par tap karein. Phone 3 se 5 seconds me 55 MB package ko unpack karke install kar dega.</p>
-                
-                <div class="step-note success">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <div><strong>Google Play Protect Verified:</strong> Android is app ko scan karke safe declare kar dega.</div>
-                </div>
-              </div>
-
-              <!-- Realistic UI Simulation: Package Installer -->
-              <div class="step-ui-simulation">
-                <div class="sim-phone-header">
-                  <span class="sim-dot"></span>
-                  <span class="sim-title">Package Installer</span>
-                </div>
-                <div class="sim-body">
-                  <div class="sim-installer-card">
-                    <div class="sim-installer-app">
-                      <div class="sim-app-logo"><i class="fa-solid fa-bus"></i></div>
-                      <div class="sim-app-title">Campus Bus (DHSGSU)</div>
-                    </div>
-                    <div class="sim-installer-prompt">Do you want to install this application?</div>
-                    <div class="sim-btn-group">
-                      <button class="sim-btn sim-btn-cancel">Cancel</button>
-                      <button class="sim-btn sim-btn-primary pulse-btn">Install <i class="fa-solid fa-hand-pointer finger-icon"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- STEP 6 -->
-          <div class="step-full-card success-step" id="step-6">
-            <div class="step-header-row">
-              <div class="step-index-badge success">06</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead success-text">Kadam 6 • Mubarak Ho!</span>
-                <h3 class="step-heading">"Open" Karein Aur Pickup Point Set Karein!</h3>
-              </div>
-            </div>
-
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>Screen par <strong>"App installed."</strong> show hoga.</p>
-                <p>Niche diye gaye <strong>"Open"</strong> button par tap karein. App open hoga aur aapse location permission maangega.</p>
-                <p>Apna regular stop (jaise <em>Central Library</em> ya <em>Girls Hostel</em>) chunein aur dekhein ki campus bus kahan tak pahunchi hai!</p>
-
-                <div class="step-note success">
-                  <i class="fa-solid fa-wand-magic-sparkles"></i>
-                  <div><strong>Ready to Use:</strong> Phone ke Home Screen aur App Drawer me <strong>Campus Bus</strong> icon create ho gaya hai.</div>
-                </div>
-              </div>
-
-              <!-- Realistic UI Simulation: App Installed Open -->
-              <div class="step-ui-simulation">
-                <div class="sim-phone-header">
-                  <span class="sim-dot"></span>
-                  <span class="sim-title">Installation Finished</span>
-                </div>
-                <div class="sim-body">
-                  <div class="sim-success-card">
-                    <div class="sim-success-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <div class="sim-success-title">App installed.</div>
-                    <div class="sim-success-sub">Campus Bus successfully install ho gaya hai.</div>
-                    <div class="sim-btn-group">
-                      <button class="sim-btn sim-btn-secondary">Done</button>
-                      <button class="sim-btn sim-btn-success pulse-btn">Open App <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h4>"Install" Dabayen & Bus Track Karein!</h4>
+            <p>Screen par <strong>"Install"</strong> button dabayein. 5 second me app install ho jayegi. <strong>Open</strong> karein aur apna stop chunein!</p>
+            <div class="step-hint success">
+              <i class="fa-solid fa-wand-magic-sparkles text-success"></i> Mubarak ho! App ready to track.
             </div>
           </div>
 
         </div>
 
-        <!-- Phone Brand Quick Tips -->
-        <div class="brand-tips-section">
-          <h4 class="brand-tips-heading"><i class="fa-solid fa-mobile-screen"></i> Apne Phone Ke Anusaar Quick Setting Tips:</h4>
-          <div class="brand-grid">
-            <div class="brand-card">
-              <h5><i class="fa-brands fa-android"></i> Samsung (One UI)</h5>
-              <p>Settings &gt; <em>Security and Privacy</em> &gt; <em>Install unknown apps</em> &gt; Chrome ko <strong>ON</strong> karein.</p>
+        <!-- Phone Brand Quick Tips Accordion/Grid -->
+        <div class="brand-tips-box">
+          <div class="brand-tips-header">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h4>Phone Brands Ke Liye Quick Tips:</h4>
+          </div>
+          <div class="brand-chips-grid">
+            <div class="brand-chip">
+              <strong><i class="fa-brands fa-android"></i> Samsung:</strong> Settings &gt; Security &gt; Install Unknown Apps &gt; Chrome ON.
             </div>
-            <div class="brand-card">
-              <h5><i class="fa-solid fa-bolt"></i> Xiaomi / Redmi / Poco</h5>
-              <p>Unknown apps popup me 10s wait karke <em>"I'm aware of the risks"</em> tick karein aur <strong>OK</strong> dabayein.</p>
+            <div class="brand-chip">
+              <strong><i class="fa-solid fa-bolt"></i> Xiaomi/Redmi:</strong> Unknown apps popup me "I am aware" tick karein aur OK dabayein.
             </div>
-            <div class="brand-card">
-              <h5><i class="fa-solid fa-circle-notch"></i> Realme / Oppo / Vivo</h5>
-              <p>Settings &gt; <em>App Management</em> &gt; <em>Special App Access</em> &gt; <em>Install unknown apps</em> ko enable karein.</p>
+            <div class="brand-chip">
+              <strong><i class="fa-solid fa-circle-notch"></i> Realme/Oppo/Vivo:</strong> Settings &gt; Special App Access &gt; Allow Chrome.
             </div>
-            <div class="brand-card">
-              <h5><i class="fa-solid fa-shield"></i> OnePlus (OxygenOS)</h5>
-              <p>Chrome me direct APK open karein aur aane wale popup me <strong>"Allow from this source"</strong> ko ON karein.</p>
+            <div class="brand-chip">
+              <strong><i class="fa-solid fa-shield"></i> OnePlus:</strong> Popup me "Allow from this source" switch ko ON karein.
             </div>
           </div>
         </div>
 
       </div>
+    </section>
 
-      <!-- Tab Content: Windows PC -->
-      <div class="tab-pane" id="tab-windows">
-        <div class="steps-flow-container">
-          <div class="step-full-card">
-            <div class="step-header-row">
-              <div class="step-index-badge">01</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead">Step 1</span>
-                <h3 class="step-heading">Android Emulator Use Karein (PC ke liye)</h3>
-              </div>
-            </div>
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>Laptop ya PC me chalane ke liye BlueStacks ya LDPlayer emulator me <code>app-release.apk</code> file ko drag &amp; drop karke install karein.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab Content: iOS (iPhone / iPad) -->
-      <div class="tab-pane" id="tab-ios">
-        <div class="steps-flow-container">
-          <div class="step-full-card">
-            <div class="step-header-row">
-              <div class="step-index-badge">01</div>
-              <div class="step-title-wrap">
-                <span class="step-subhead">Step 1</span>
-                <h3 class="step-heading">Safari Browser me Web Portal Kholein</h3>
-              </div>
-            </div>
-            <div class="step-card-content">
-              <div class="step-text-col">
-                <p>iPhone par Apple Safari browser me website khol kar bottom me <strong>Share Icon</strong> par click karein aur <strong>"Add to Home Screen"</strong> chunein.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- DOWNLOAD HUB (MAIN ACTION CARD) -->
-  <section class="download-section" id="download">
-    <div class="container">
-      <div class="download-card">
-        <div class="download-card-glow"></div>
-        <div class="download-content">
+    <!-- DOWNLOAD HUB (MAIN ACTION SECTION) -->
+    <section class="download-section" id="download">
+      <div class="container">
+        <div class="download-card">
           <div class="badge-pill light">
             <i class="fa-solid fa-bus"></i> Official University Release (v2.1.4)
           </div>
           <h2 class="download-title">Campus Bus App Abhi Download Karein</h2>
           <p class="download-subtitle">
-            Dr. Hari Singh Gour Vishwavidyalaya, Sagar ke sabhi students, teachers aur staff ke liye 100% Free.
+            Dr. Hari Singh Gour University, Sagar ke sabhi students, scholars aur faculty ke liye 100% Free.
           </p>
 
-          <!-- Main Download Action Grid -->
-          <div class="download-buttons-group">
+          <!-- Download Action Buttons -->
+          <div class="download-actions-grid">
             <a href="app-release.apk" download="app-release.apk" class="btn btn-download-primary" id="directApkBtn">
-              <div class="btn-icon">
-                <i class="fa-brands fa-android"></i>
+              <div class="download-btn-icon"><i class="fa-brands fa-android"></i></div>
+              <div class="download-btn-text">
+                <span class="dl-tag">Fast Server (Primary)</span>
+                <span class="dl-title">Download APK (v2.1.4)</span>
+                <span class="dl-meta">Size: 55.0 MB • Android 8.0+ • DHSGSU</span>
               </div>
-              <div class="btn-details">
-                <span class="tagline">Primary Fast Server</span>
-                <span class="filename">Download APK (v2.1.4)</span>
-                <span class="meta">Size: 55.0 MB • Android 8.0+ • DHSGSU Sagar</span>
-              </div>
-              <i class="fa-solid fa-arrow-down-to-bracket download-arrow"></i>
+              <i class="fa-solid fa-arrow-down download-arrow-icon"></i>
             </a>
 
             <a href="app-release.apk" download="app-release.apk" class="btn btn-download-secondary" id="mirrorDownloadBtn">
-              <div class="btn-icon">
-                <i class="fa-solid fa-server"></i>
+              <div class="download-btn-icon"><i class="fa-solid fa-server"></i></div>
+              <div class="download-btn-text">
+                <span class="dl-tag">Direct Mirror</span>
+                <span class="dl-title">Mirror Download Link</span>
+                <span class="dl-meta">Instant High-Speed CDN • 55 MB</span>
               </div>
-              <div class="btn-details">
-                <span class="tagline">Campus Mirror Link</span>
-                <span class="filename">Direct Mirror Download</span>
-                <span class="meta">High-speed CDN • Instant 55 MB</span>
-              </div>
-              <i class="fa-solid fa-cloud-arrow-down download-arrow"></i>
+              <i class="fa-solid fa-cloud-arrow-down download-arrow-icon"></i>
             </a>
           </div>
 
-          <!-- Checksum & Package Metadata -->
-          <div class="download-notice">
-            <i class="fa-solid fa-circle-check text-success"></i>
-            <span>Package: <code>com.dhsgsu.campusbus</code> • Size: <strong>55.0 MB</strong> • Verified Clean</span>
+          <!-- Verified Info -->
+          <div class="download-verified-info">
+            <i class="fa-solid fa-shield-check text-success"></i>
+            <span>Package: <code>com.dhsgsu.campusbus</code> • Size: <strong>55.0 MB</strong> • 100% Virus-Free Clean</span>
           </div>
 
-          <!-- Share / Copy Link Row -->
+          <!-- Share Link Box -->
           <div class="share-box">
-            <span>DHSGSU dosto ke sath share karein:</span>
-            <div class="copy-input-group">
-              <input type="text" id="shareUrlInput" value="https://campusbus-dhsgsu.ac.in" readonly />
-              <button class="btn-copy" id="copyBtn" title="Copy Link">
+            <span>DHSGSU ke dosto ke sath share karein:</span>
+            <div class="share-input-group">
+              <input type="text" id="shareUrlInput" value="https://campusbus-dhsgsu.ac.in" readonly aria-label="Share URL" />
+              <button class="btn-copy" id="copyBtn" type="button">
                 <i class="fa-regular fa-copy"></i>
                 <span id="copyBtnText">Copy Link</span>
               </button>
             </div>
           </div>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ SECTION -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Aapke Sawal</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-desc">Dr. Hari Singh Gour University Campus Bus app se jude zaroori sawal-jawab.</p>
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Aapke Sawal</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Dr. Hari Singh Gour University Campus Bus app se jude zaroori sawal-jawab.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Kya ye app Dr. Hari Singh Gour University campus ke liye bilkul free hai?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Haan! Campus Bus app DHSGSU ke sabhi students, scholars aur faculty members ke liye 100% bilkul free hai. Isme kisi subscription ya registration fees ki zaroorat nahi hai.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>App ka size 55 MB kyun hai?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>University ka campus 1300+ acre pahari kshetra me phaila hai. Is 55 MB package me poor campus ka high-resolution offline map database pehle se download hota hai, taaki kam mobile signal me bhi bus route turant khule.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Pickup point kaise select karein?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>App open karte hi screen ke upar 'Aapka Pickup Stop' ka dropdown milega. Wahan se aap Central Library, Main Gate, Tagore Girls Hostel, Science Block etc. chunein. App turant pass wali bus ka ETA dikha dega.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Android me "File might be harmful" warning kyun aati hai?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Jab bhi Google Play Store ke bahar se kisi official website se APK download karte hain, to Google Chrome safety alert dikhata hai. Hamara APK verified aur virus-free hai, isliye bina chinta ke "Download anyway" dabayein.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Bus late ho ya route change ho to kaise pata chalega?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>University transport cell dwara app me instant notification system hai. Agar schedule me badlaav hota hai ya bus delay hoti hai, to sabhi students ko instant push notification mil jata hai.</p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="faq-accordion">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Kya ye app Dr. Hari Singh Gour University campus ke liye bilkul free hai?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Haan, Campus Bus app DHSGSU ke sabhi students, scholars aur faculty members ke liye 100% bilkul free hai. Isme kisi registration fee ya subscription ki zaroorat nahi hai.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>App ka size 55 MB kyun hai?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Dr. Hari Singh Gour Vishwavidyalaya ka campus 1300+ acre pathar par phaila hua hai. App ke 55 MB package me university ke poore campus ka high-resolution offline map database shamil hai, taaki agar campus ke kisi kone me mobile network kam ho, tab bhi bus route aur stops turant load ho sakein.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Pickup point kaise select karein?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <p>App open karte hi screen ke upar 'Select Pickup Point' ka dropdown milega. Wahan se aap apna sthan (jaise Central Library, Main Gate, Tagore Girls Hostel, Science Block etc.) chunein. App turant calculate kar dega ki sabse pass wali bus kitni der me wahan pahuchegi.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Android me "File might be harmful" warning kyun dikhata hai?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Jab bhi aap Google Play Store ke alawa kisi official website se APK download karte hain, to Google Chrome safety alert dikhata hai. Hamara APK verified aur virus-free hai, isliye bina chinta kiye "Download anyway" dabayein.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Agar bus late ho ya route change ho to kaise pata chalega?</span>
-            <i class="fa-solid fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <p>App me university transport cell dwara live notification broadcast system hai. Agar kisi bus ka tyre puncture hota hai ya schedule me badlaav hota hai, to sabhi students ko instant push notification mil jata hai.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -1050,71 +716,83 @@
         <a href="#home" class="brand-logo footer-logo">
           <div class="logo-icon small"><i class="fa-solid fa-bus"></i></div>
           <div class="logo-text-group">
-            <span class="logo-text">Campus<span>Bus</span></span>
+            <span class="logo-text">Campus<strong>Bus</strong></span>
             <span class="logo-subtext">DHSGSU Sagar</span>
           </div>
         </a>
         <p class="footer-desc">
-          Dr. Hari Singh Gour Vishwavidyalaya, Sagar (M.P.) ke vishal campus me bus tracking aur student conveyance ko asaan banane ka digital prayas.
+          Dr. Hari Singh Gour Vishwavidyalaya, Sagar (M.P.) campus me bus tracking aur student conveyance ko aasan banane ka digital prayas.
         </p>
         <div class="social-links">
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
           <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
       <div class="footer-col">
-        <h5>Mukhya Links</h5>
+        <h5>Quick Links</h5>
         <ul class="footer-links">
-          <li><a href="#home">Home Tracker</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#features">Key Features</a></li>
-          <li><a href="#routes">Campus Pickup Points</a></li>
-          <li><a href="#install">Installation Guide</a></li>
-          <li><a href="#download">Download APK (55 MB)</a></li>
+          <li><a href="#routes">Pickup Stops</a></li>
+          <li><a href="#install">Install Guide</a></li>
+          <li><a href="#download">Download APK</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>University Stops</h5>
+        <h5>Campus Stops</h5>
         <ul class="footer-links">
-          <li><a href="#routes">Main Gate Entry</a></li>
           <li><a href="#routes">Central Library</a></li>
-          <li><a href="#routes">Admin & VC Office</a></li>
-          <li><a href="#routes">Hostels Complex</a></li>
-          <li><a href="#routes">Science & Engg Faculty</a></li>
+          <li><a href="#routes">Main Gate Entry</a></li>
+          <li><a href="#routes">Tagore Hostel</a></li>
+          <li><a href="#routes">C.V. Raman Hostel</a></li>
+          <li><a href="#routes">Science &amp; Engg Block</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h5>App Specifications</h5>
-        <div class="specs-pill-list">
+        <h5>App Specs</h5>
+        <div class="specs-list">
           <div class="spec-pill"><strong>App:</strong> Campus Bus DHSGSU</div>
-          <div class="spec-pill"><strong>Version:</strong> v2.1.4 (Official)</div>
-          <div class="spec-pill"><strong>Package Size:</strong> 55.0 MB</div>
-          <div class="spec-pill"><strong>Target Campus:</strong> Sagar, M.P.</div>
-          <div class="spec-pill"><strong>Compatibility:</strong> Android 8.0+</div>
+          <div class="spec-pill"><strong>Version:</strong> v2.1.4 Official</div>
+          <div class="spec-pill"><strong>Size:</strong> 55.0 MB</div>
+          <div class="spec-pill"><strong>OS:</strong> Android 8.0+</div>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>&copy; 2026 Campus Bus — Dr. Hari Singh Gour Vishwavidyalaya, Sagar. Designed with <i class="fa-solid fa-heart text-danger"></i> for DHSGSU students.</p>
-        <div class="footer-tag">Official Student Transit Portal</div>
+        <p>&copy; 2026 Campus Bus — Dr. Hari Singh Gour University, Sagar (M.P.). 100% Free For Students.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Toast Notification on Download -->
-  <div class="toast-notification" id="downloadToast">
+  <!-- MOBILE BOTTOM STICKY DOWNLOAD BAR -->
+  <div class="mobile-sticky-bar" id="mobileStickyBar">
+    <div class="mobile-sticky-info">
+      <div class="mobile-sticky-icon"><i class="fa-solid fa-bus"></i></div>
+      <div class="mobile-sticky-text">
+        <strong>Campus Bus APK</strong>
+        <span>55 MB • DHSGSU</span>
+      </div>
+    </div>
+    <a href="app-release.apk" download="app-release.apk" class="btn btn-primary btn-sm mobile-sticky-btn">
+      <i class="fa-solid fa-download"></i> Download
+    </a>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION ON DOWNLOAD -->
+  <div class="toast-notification" id="downloadToast" role="alert" aria-live="polite">
     <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
     <div class="toast-content">
       <strong>Campus Bus (55 MB) Download Shuru!</strong>
-      <p>Apne notification bar ya Chrome Downloads me check karein.</p>
+      <p>Apne notification bar ya Chrome Downloads me dekhein.</p>
     </div>
-    <button class="toast-close" id="toastClose">&times;</button>
+    <button class="toast-close" id="toastClose" aria-label="Close notification">&times;</button>
   </div>
 
   <!-- JavaScript -->
